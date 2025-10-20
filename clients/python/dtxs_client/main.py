@@ -153,6 +153,14 @@ class DtxsClient:
     )
     return response
 
+  def searchRecords(self, query):
+    response = self.sendRequest(
+      "POST",
+      "/database/" + self.database + "/records",
+      {"query": query}
+    )
+    return response
+
   def createFolder(self, folderName, parentFolderUid):
     response = self.sendRequest(
       "POST",
